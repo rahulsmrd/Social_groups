@@ -1,0 +1,12 @@
+{% extends 'post/post_base.html' %}
+
+{% block post_content %}
+<h3>Create New Post</h3>
+<form action="{% url 'posts:create' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+<button class="btn btn-outline-success" type="submit">
+        Post
+    </button>
+</form>
+{% endblock %}
